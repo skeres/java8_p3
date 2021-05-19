@@ -67,6 +67,8 @@ public class Main {
         myList.forEach(e-> System.out.println(e));
 
 
+        MesReducesAndCo mesReducesAndCo=new MesReducesAndCo();
+        mesReducesAndCo.reduce1();
 
         System.out.println("end");
 
