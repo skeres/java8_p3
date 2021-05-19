@@ -1,5 +1,10 @@
 package com.sks.execution;
 
+import com.sks.utils.Affichage;
+import com.sks.utils.Identite;
+import com.sks.utils.MesStreams;
+import com.sks.utils.Personne;
+
 import java.io.*;
 import java.nio.charset.Charset;
 import java.util.Scanner;
@@ -12,14 +17,56 @@ public class Main {
         System.out.println("begin");
         Main main = new Main();
 
-        main.prompt();
+       // main.prompt();
 
-        main.createfile();
+       // main.createfile();
 
-        main.readFile();
+       // main.readFile();
 
+        //main.createObjectWithIdent();
+
+        /*
+        int [] tab0={1,2};
+        System.out.println("0 before call for rewrite [] object ="+tab0[0]);
+        main.rewriteObject(tab0);
+        System.out.println("0="+tab0[0]);
+        System.out.println("1="+tab0[1]);
         System.out.println("end");
+        */
+
+        //Affichage affichage=new Affichage();
+        //affichage.doStuff();
+
+        //MesStreams mesStreams=new MesStreams();
+        //mesStreams.doStuff();
+
+        Personne personne=new Personne();
+        personne.initArray();
+        personne.afficher_le_nom_des_personnes_nées_apres_1985();
+        personne.afficher_le_nom_des_personnes_nées_avant_2000_trie_nom_et_affiche_nombre();
+        personne.tri_sur_nom_et_prenom();
+        personne.annee_de_naissance_de_la_plus_jeune();
     }
+
+    public int [] rewriteObject(int[] tab) {
+        tab[0]=42;
+        return tab;
+    }
+
+
+    //Exercice
+    private void createObjectWithIdent() {
+        //creation de a
+        Identite a=new Identite();
+        System.out.println("identité de a = "+a.getIdent()+ " identité max = "+Identite.getIdentMax());
+
+        Identite b=new Identite();
+        System.out.println("identité de b = "+b.getIdent()+ " identité max = "+Identite.getIdentMax());
+        System.out.println("identité de a = "+a.getIdent()+ " identité max = "+Identite.getIdentMax());
+
+    }
+
+
 
     private void prompt() throws InterruptedException {
         Scanner myObj = new Scanner(System.in);  // Create a Scanner object
