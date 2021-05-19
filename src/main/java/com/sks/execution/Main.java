@@ -1,13 +1,10 @@
 package com.sks.execution;
 
-import com.sks.utils.Affichage;
-import com.sks.utils.Identite;
-import com.sks.utils.MesStreams;
-import com.sks.utils.Personne;
+import com.sks.utils.*;
 
 import java.io.*;
 import java.nio.charset.Charset;
-import java.util.Scanner;
+import java.util.*;
 
 import static java.lang.Double.parseDouble;
 
@@ -40,12 +37,39 @@ public class Main {
         //MesStreams mesStreams=new MesStreams();
         //mesStreams.doStuff();
 
+        /*
         Personne personne=new Personne();
         personne.initArray();
         personne.afficher_le_nom_des_personnes_nées_apres_1985();
         personne.afficher_le_nom_des_personnes_nées_avant_2000_trie_nom_et_affiche_nombre();
         personne.tri_sur_nom_et_prenom();
         personne.annee_de_naissance_de_la_plus_jeune();
+        */
+
+        WriteReadFilewithStream writeReadFilewithStream=new WriteReadFilewithStream();
+        writeReadFilewithStream.writeFile();
+        writeReadFilewithStream.readFile();
+
+        List<Integer> myList=new ArrayList<>();
+        myList.add(7);
+        myList.add(2);
+        myList.add(2);
+        myList.add(2);
+        myList.add(9);
+        Collections.sort(myList,(o1, o2) -> {
+            int ret=0;
+            if ((int)o1<(int)o2) ret= 1;
+            if ((int)o1>(int)o2) ret= -1;
+            if ((int)o1==(int)o2) ret= 0;
+            return ret;
+        } );
+        System.out.println("tri ordre inverse : ");
+        myList.forEach(e-> System.out.println(e));
+
+
+
+        System.out.println("end");
+
     }
 
     public int [] rewriteObject(int[] tab) {
